@@ -9,7 +9,7 @@ from app.models.users import Users
 from app.schemas.users import UserCreate
 from app.services.exceptions import ConflictError, NotFoundError
 
-async def create_user(session: AsyncSession, user_datas: UserCreate) -> Users:
+async def register_user(session: AsyncSession, user_datas: UserCreate) -> Users:
         user = Users(
             email=user_datas.email,
             full_name=user_datas.full_name,
