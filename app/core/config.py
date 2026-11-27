@@ -27,6 +27,11 @@ class Settings(BaseSettings):
     db_max_overflow: int = 10
     db_echo: bool = False
 
+    secret_key: str
+    access_token_expire_minutes: int = 5
+    refresh_token_expire_minutes: int = 45
+    jwt_algorithm: str = "HS256"
+
     def _database_url(self, driver: str) -> URL:
         return URL.create(
             drivername=driver,
